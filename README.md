@@ -2,12 +2,13 @@
 seq2seq model is used to build a generative model for dialogue system
 <hr>
 
-**Dataset**
+**Dataset** : 
+
 The Cornell Movie-Dialogs Corpus: 
 The Cornell Movie-Dialogs Corpus contains 220,579 conversational exchanges between 10,292 pairs of movie characters, 9,035 characters from 617 movies, and 304,713 total utterances. This dataset is large with a wide variety of language formality, time periods, and other variables. Our hope is that this variety will make our model responsive to a wide range of queries.
 
 <hr>
-**Encoder**: For Sequence-to-Sequence model, encoding of the source sentence is done by an Encoder RNN. It provides the initial hidden state for the decoder RNN.
+**Encoder** : For Sequence-to-Sequence model, encoding of the source sentence is done by an Encoder RNN. It provides the initial hidden state for the decoder RNN.
 
 For creating an encoder model, we are using Embedding layer which is created by using the embeddings created by using GloVe 50d data which converts each word into a fixed-length vector of the Embed size provided- Embed_dim: 50.
 
@@ -18,7 +19,7 @@ We'll utilize a bidirectional rendition of the GRU, which successfully implies t
 A dropout layer is added between the two Bidirectional GRU layers to avoid overfitting after all the output of the output sequence.
 <hr>
 
-**Decoder**: The other part of the sequence-to-sequence model is the decoder. Decoder is an RNN language model that generates target sentence conditioned on encoding, So, encoder last hidden states are used to initialize the decoder.
+**Decoder** : The other part of the sequence-to-sequence model is the decoder. Decoder is an RNN language model that generates target sentence conditioned on encoding, So, encoder last hidden states are used to initialize the decoder.
 
 For the decoder model, we are using the attention mechanism to focus on the specific parts of the input sequence. 
 The attention layer is created using the BahdanauAttention which is based on Bahdanau et al.
@@ -37,7 +38,7 @@ Response of a question after Epoch 140.
 
 <img width="568" alt="image" src="https://user-images.githubusercontent.com/35501313/171734614-4f385570-6e11-4cf9-8767-8a4dbb28702a.png">
 
-**Conslusion**
+**Conslusion** :
 We can observe that the higher attention weights have been applied to the initial part of the sentence and as the number of epochs increases the attention weight distribution to the important words get better. Hence, the model is able to generate better responses.
 
 
