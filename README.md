@@ -1,7 +1,12 @@
-# encoder_decoder_dialogue_system
+# Encoder Decoder Sequence to Sequence model Dialogue System
 seq2seq model is used to build a generative model for dialogue system
 <hr>
 
+**Dataset**
+The Cornell Movie-Dialogs Corpus: 
+The Cornell Movie-Dialogs Corpus contains 220,579 conversational exchanges between 10,292 pairs of movie characters, 9,035 characters from 617 movies, and 304,713 total utterances. This dataset is large with a wide variety of language formality, time periods, and other variables. Our hope is that this variety will make our model responsive to a wide range of queries.
+
+<hr>
 **Encoder**: For Sequence-to-Sequence model, encoding of the source sentence is done by an Encoder RNN. It provides the initial hidden state for the decoder RNN.
 
 For creating an encoder model, we are using Embedding layer which is created by using the embeddings created by using GloVe 50d data which converts each word into a fixed-length vector of the Embed size provided- Embed_dim: 50.
